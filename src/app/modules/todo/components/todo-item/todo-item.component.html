@@ -1,0 +1,62 @@
+<div class="todo-cell">
+  <div class="action-cell">
+    <div (click)="toggleTodoStatus()">
+      <ng-container *ngIf="todoItem?.status !== 'COMPLETE'">
+        <i class="bx bx-check-circle"></i>
+      </ng-container>
+      <ng-container *ngIf="todoItem?.status === 'COMPLETE'">
+        <i class="bx bxs-check-circle"></i>
+      </ng-container>
+    </div>
+  </div>
+  <div
+    class="item-cell"
+    *ngIf="!editingEnabled"
+    [ngClass]="{ 'item-cell-completed': todoItem?.status === 'COMPLETE' }"
+    (mouseenter)="showEdit = true"
+    (mouseleave)="showEdit = false"
+  >
+    <span>{{ todoItem?.name }}</span>
+
+    <div class="edit-option" (mouseenter)="$event.stopPropagation()">
+      <app-small-button
+        *ngIf="showEdit"
+        [buttonType]="'edit'"
+        (click)="flagTodoForEdit()"
+      ></app-small-button>
+    </div>
+  </div>
+  <!-- Edit todo -->
+  <div
+    class="item-cell"
+    *ngIf="editingEnabled"
+    [ngClass]="{ 'item-cell-completed': todoItem?.status === 'COMPLETE' }"
+  >
+    <app-input
+      [placeholder]="this.newTodo?.name ?? ''"
+      (value)="this.newTodo.name = $event"
+    ></app-input>
+    <div class="edit-option" (mouseenter)="$event.stopPropagation()">
+      <app-small-button
+        [buttonType]="'confirm'"
+        (click)="confirmEdit()"
+      ></app-small-button>
+    </div>
+  </div>
+  <div class="priority-cell">
+    <span
+      [ngClass]="{
+        'priority-low': todoItem?.priority === 'Low',
+        'priority-medium': todoItem?.priority === 'Medium',
+        'priority-high': todoItem?.priority === 'High'
+      }"
+      >{{ todoItem?.priority }}</span
+    >
+  </div>
+  <div class="delete-cell">
+    <app-small-button
+      [buttonType]="'delete'"
+      (click)="removeTodo()"
+    ></app-small-button>
+  </div>
+</div>

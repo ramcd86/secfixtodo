@@ -1,0 +1,30 @@
+.tab-cell-container {
+  width: 100%;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tab-cell {
+  display: inline-block;
+  margin-right: 40px;
+  padding-bottom: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  color: #6b7280;
+}
+
+.active {
+  color: #7c3aed;
+  border-bottom: 2px solid #7c3aed;
+}
+
+.todo-container {
+  display: block;
+  width: 680px;
+  height: 70px;
+  border-top: 1px solid #d1d5db;
+  border-left: 1px solid #d1d5db;
+  border-right: 1px solid #d1d5db;
+  border-bottom: 1px solid #d1d5db;
+  margin-top: -1px;
+}

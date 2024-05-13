@@ -1,0 +1,19 @@
+<div class="paginator">
+  <div class="details">
+    Showing <strong>1</strong> to <strong>{{ currentPageLength }}</strong> of
+    <strong>{{ totalItems }}</strong> results
+  </div>
+  <div class="page-selectors">
+    <div class="select-left" (click)="pageLeft()">
+      <i class="bx bx-chevron-left"></i>
+    </div>
+    <div class="page-selector" *ngFor="let page of numberOfPages | range">
+      <span (click)="selectPage(page)">
+        {{ page + 1 }}
+      </span>
+    </div>
+    <div class="select-right" (click)="pageRight()">
+      <i class="bx bx-chevron-right"></i>
+    </div>
+  </div>
+</div>

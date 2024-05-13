@@ -1,0 +1,17 @@
+<span class="label-style">{{ label }}</span>
+<div
+  class="input-style dropdown"
+  (click)="dropDownSelectonEnabled = !dropDownSelectonEnabled"
+>
+  <span>{{ selectedItem }}</span>
+  <i class="bx bx-chevron-down"> </i>
+  <div class="dropdown-selection" *ngIf="dropDownSelectonEnabled">
+    <div
+      class="dropdown-item"
+      *ngFor="let item of items"
+      (click)="selectItem(item)"
+    >
+      {{ item }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+:root {
+  --shadow-props: 0 2px 2px rgba(0, 0, 0, 0.01), 0 2px 2px rgba(0, 0, 0, 0.01);
+  --border-props: 1px solid #d1d5db;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-color: #fafafa;
+  color: #111827;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+.label-style {
+  width: 100%;
+  font-size: 14px;
+}
+
+.input-style {
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: var(--shadow-props);
+  border: var(--border-props);
+  width: 100%;
+  height: 40px;
+  max-height: 40px;
+  outline: none;
+  padding: 0 0 0 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}

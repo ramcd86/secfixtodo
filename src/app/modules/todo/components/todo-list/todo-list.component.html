@@ -1,0 +1,92 @@
+<div class="tab-cell-container">
+  <div
+    class="tab-cell"
+    [ngClass]="{ active: allTodosSelected }"
+    (click)="setSelectedTodoStatus('ALL')"
+  >
+    All Todos
+  </div>
+  <div
+    class="tab-cell"
+    [ngClass]="{ active: inProgressSelected }"
+    (click)="setSelectedTodoStatus('IN_PROGRESS')"
+  >
+    In Progress
+  </div>
+  <div
+    class="tab-cell"
+    [ngClass]="{ active: completedSelected }"
+    (click)="setSelectedTodoStatus('COMPLETED')"
+  >
+    Completed
+  </div>
+</div>
+<div class="list-container">
+  <ng-container *ngIf="allTodosSelected">
+    <ng-container *ngFor="let todoItem of allToDos[allTodosPage]">
+      <div class="todo-container">
+        <app-todo-item
+          [todoItem]="todoItem"
+          (emitTodo)="emitTodo.emit($event)"
+        ></app-todo-item>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="allToDos.length === 0"> No todos </ng-container>
+    <div class="pagination">
+      <app-paginator
+        *ngIf="allToDos.length > 0"
+        [numberOfPages]="allToDos.length"
+        [currentPageLength]="allToDos[allTodosPage].length"
+        [totalItems]="allTodosNumber"
+        [currentPage]="allTodosPage"
+        (changePage)="handlePageChange('ALL', $event)"
+      ></app-paginator>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="inProgressSelected">
+    <ng-container *ngFor="let todoItem of inProgressTodos[inProgressTodosPage]">
+      <div class="todo-container">
+        <app-todo-item
+          [todoItem]="todoItem"
+          (emitTodo)="emitTodo.emit($event)"
+        ></app-todo-item>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="inProgressTodos.length === 0">
+      No in progress todos
+    </ng-container>
+    <div class="pagination">
+      <app-paginator
+        *ngIf="inProgressTodos.length > 0"
+        [numberOfPages]="inProgressTodos.length"
+        [currentPageLength]="inProgressTodos[inProgressTodosPage].length"
+        [totalItems]="inProgressTodosNumber"
+        [currentPage]="inProgressTodosPage"
+        (changePage)="handlePageChange('IN_PROGRESS', $event)"
+      ></app-paginator>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="completedSelected">
+    <ng-container *ngFor="let todoItem of completedTodos[completedTodosPage]">
+      <div class="todo-container">
+        <app-todo-item
+          [todoItem]="todoItem"
+          (emitTodo)="emitTodo.emit($event)"
+        ></app-todo-item>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="completedTodos.length === 0">
+      No completed todos
+    </ng-container>
+    <div class="pagination">
+      <app-paginator
+        *ngIf="completedTodos.length > 0"
+        [numberOfPages]="completedTodos.length"
+        [currentPageLength]="completedTodos[completedTodosPage].length"
+        [totalItems]="completedTodosNumber"
+        [currentPage]="completedTodosPage"
+        (changePage)="handlePageChange('COMPLETED', $event)"
+      ></app-paginator>
+    </div>
+  </ng-container>
+</div>

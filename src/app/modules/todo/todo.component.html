@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Create Todos</h1>
+  <div class="card-rounded">
+    <app-todo-creation (emitTodo)="addNewTodo($event)"></app-todo-creation>
+  </div>
+  <h1>Todos</h1>
+  <app-todo-list (emitTodo)="updateTodo($event)"></app-todo-list>
+</div>

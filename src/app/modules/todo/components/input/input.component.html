@@ -1,0 +1,8 @@
+<label for="input" class="label-style" *ngIf="label">{{ label }}</label>
+<input
+  class="input-style"
+  (keyup)="handleInput($event)"
+  id="input"
+  type="text"
+  placeholder="{{ placeholder }}"
+/>

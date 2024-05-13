@@ -1,0 +1,10 @@
+button {
+  outline: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: var(--shadow-props);
+  border: var(--border-props);
+  cursor: pointer;
+}

@@ -1,0 +1,23 @@
+<div class="todo-creation-cell">
+  <div class="input-cell">
+    <app-input
+      [label]="'Todo'"
+      [placeholder]="'Create Todo Here'"
+      (value)="setTodoTitle($event)"
+    ></app-input>
+  </div>
+  <div class="dropdown-cell">
+    <app-drop-down
+      [label]="'Priority'"
+      [items]="['High', 'Medium', 'Low']"
+      (value)="setPriority($event)"
+    ></app-drop-down>
+  </div>
+  <div class="button-cell">
+    <app-button
+      [label]="'Add Todo'"
+      [disabled]="!(todoTitle && priority)"
+      (onClick)="createTodo()"
+    ></app-button>
+  </div>
+</div>

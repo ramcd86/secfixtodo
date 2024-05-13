@@ -1,0 +1,95 @@
+.todo-cell {
+  background-color: #fff;
+  box-shadow: var(--shadow-props);
+  padding: 10px;
+  min-height: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.todo-cell:hover {
+  background-color: #f3f4f6;
+}
+
+.action-cell {
+  width: 40px;
+  text-align: center;
+}
+
+.bx-check-circle {
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.bxs-check-circle {
+  color: #10b981;
+  cursor: pointer;
+}
+
+.item-cell {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  width: 400px;
+}
+
+.item-cell .edit-option {
+  width: 30px;
+  display: inline-block;
+}
+
+.item-cell span {
+  display: inline-block;
+  width: 360px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item-cell app-input {
+  margin-top: -5px;
+  margin-right: 10px;
+  display: inline-block;
+  width: 350px;
+}
+
+.item-cell.item-cell-completed {
+  text-decoration: line-through;
+  color: #e6e8eb;
+}
+
+.priority-cell {
+  width: 180px;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.priority-cell .priority-low {
+  color: #545c67;
+  background-color: #f3f4f6;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 15px;
+}
+
+.priority-cell .priority-medium {
+  color: #ad6d3c;
+  background-color: #fef3c7;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 15px;
+}
+
+.priority-cell .priority-high {
+  color: #a63434;
+  background-color: #fee2e2;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 15px;
+}
+
+.delete-cell {
+  width: 50px;
+}

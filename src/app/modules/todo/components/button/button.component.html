@@ -1,0 +1,7 @@
+<button
+  class="add-todo"
+  [ngClass]="{ deselected: disabled, selected: !disabled }"
+  (click)="onClick.emit()"
+>
+  {{ label }}
+</button>

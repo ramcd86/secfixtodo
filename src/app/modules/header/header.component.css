@@ -1,0 +1,9 @@
+.header {
+  background-color: #fff;
+  box-shadow: var(--shadow-props);
+  height: 40px;
+  font-weight: 600;
+  font-size: 34px;
+  padding: 15px;
+  margin-bottom: 10px;
+}

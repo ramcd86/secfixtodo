@@ -1,0 +1,11 @@
+<button>
+  <ng-container *ngIf="buttonType === 'edit'">
+    <i class="bx bx-edit-alt"></i>
+  </ng-container>
+  <ng-container *ngIf="buttonType === 'delete'">
+    <i class="bx bx-trash"></i>
+  </ng-container>
+  <ng-container *ngIf="buttonType === 'confirm'">
+    <i class="bx bx-check"></i>
+  </ng-container>
+</button>

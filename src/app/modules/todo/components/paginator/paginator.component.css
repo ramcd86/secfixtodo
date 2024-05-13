@@ -1,0 +1,61 @@
+.paginator {
+  height: 60px;
+  background-color: #fff;
+  border: var(--border-props);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.paginator .details {
+  font-size: 14px;
+  padding-left: 25px;
+  box-sizing: border-box;
+}
+
+.paginator .page-selectors {
+  padding-right: 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+}
+
+.paginator .page-selector span {
+  display: inline-block;
+  width: 40px;
+  height: 35px;
+  text-align: center;
+  border: var(--border-props);
+  box-sizing: border-box;
+  padding-top: 7px;
+  cursor: pointer;
+  margin-left: -1px;
+}
+
+.paginator .page-selectors .select-left {
+  border: var(--border-props);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 40px;
+  height: 35px;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 9px;
+  cursor: pointer;
+  margin-left: -1px;
+}
+
+.paginator .page-selectors .select-right {
+  border: var(--border-props);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 40px;
+  height: 35px;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 9px;
+  cursor: pointer;
+  margin-left: -1px;
+}
